@@ -179,7 +179,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
         // 左右移動（X軸方向）
         if (keys[DIK_A]) {
-            translate.x += rightX * 0.1f;
+            translate.x -= rightX * 0.1f;
         }
         if (keys[DIK_D]) {
             translate.x -= rightX * 0.1f;
