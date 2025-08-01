@@ -166,10 +166,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         // 回転方向に応じた移動ベクトル計算
         float angle = rotate.y;
         float forwardZ = cosf(angle);
-        float rightX = cosf(angle);
+      
 
         // 入力に応じて移動（xとzを独立）
         // 前後移動（Z軸方向）
+      // 入力に応じて移動（xとzを独立）
+// 前後移動（Z軸方向）
         if (keys[DIK_W]) {
             translate.z += forwardZ * 0.1f;
         }
@@ -177,12 +179,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
             translate.z -= forwardZ * 0.1f;
         }
 
-        // 左右移動（X軸方向）
+        // 左右移動（X軸方向） → 回転の影響を受けずに単純移動
         if (keys[DIK_A]) {
-            translate.x -= rightX * 0.1f;
+            translate.x -= 0.1f;
         }
         if (keys[DIK_D]) {
-            translate.x -= rightX * 0.1f;
+            translate.x += 0.1f;
         }
 
         // クロス積の確認
